@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    margin: auto;
+    background: url(./images/pattern-hills.svg)  no-repeat bottom fixed, rgb(33, 31, 43) url(./images/bg-stars.svg) repeat center fixed;
+    background-size: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 90%;
+    margin:auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-size: 24px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+
+.timer-container {  
+    display: flex;
+    gap: 1.5rem;
+}
+
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 160px;
+    gap: 1.5rem;
+}
+
+.box-wrapper>p {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: hsl(237, 18%, 59%);
+}
+
+.box {
+    width: 160px;
+    height: 160px;
+    padding-inline:1rem ;
+    aspect-ratio: 1;
+    background: hsl(236, 21%, 26%);
+    border-radius: 0.5rem;
+    display: grid;
+    place-items: center;
+    color: hsl(345, 95%, 68%);
+    font-weight: 700;
+    font-size: 5rem;
+    box-shadow: 0 12px 0 0 hsl(235, 17%, 12%);
+    position: relative;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 0;
+    background-color: hsl(235, 17%, 12%);
+    transform: rotate(90deg) translateY(50%);
+    left: 0;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 0;
+    background-color: hsl(235, 17%, 12%);
+    transform: rotate(-90deg) translateY(50%);
+    right: 0;
+}
+
+.front {
+    position: absolute;
+    width: 100%;
+    height: calc(100% / 2);
+    background-color: hsl(235, 17%, 12%, 0.5);
+    top: 0;
+    transform-origin: bottom;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
